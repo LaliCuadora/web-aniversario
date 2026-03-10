@@ -50,12 +50,18 @@ button:hover{
 
 <p id="contador"></p>
 
+<p id="equivalencia_MC"></p>
+
+    
 <script>
 // Función para mostrar mensaje del botón
 function mensaje(){
     alert("Eres mi persona favorita ❤️");
 }
 
+//CONSTANTES
+const precio = 10;
+    
 // Contador de días juntos
 // Cambia la fecha de inicio a la de vuestra relación
 let inicio = new Date("2024-03-16"); // AAAA-MM-DD
@@ -70,6 +76,13 @@ let dias = Math.floor(diferencia / (1000*60*60*24));
 // Convertir a años
 let anios =  Math.floor(dias / 365);
 
+
+// Calcular el número de
+let equivalencia = Math.floor(diferencia/11 )
+
+// Mostrar en el <p> con id "contador"
+document.getElementById("equivalencia_MC").innerHTML =
+"Eso equivale a " + equivalencia + "  menus del McDonald's";
     
 // Mostrar en el <p> con id "contador"
 document.getElementById("contador").innerHTML =
@@ -83,6 +96,7 @@ document.getElementById("mensaje-aniversario").innerHTML =
 
 </body>
 </html>
+
 
 
 
