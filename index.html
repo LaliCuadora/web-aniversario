@@ -40,7 +40,8 @@ button:hover{
 
 <body>
 
-<h1>💖 Feliz 2 años 💖</h1>
+<h1 id="mensaje-aniversario">💖 Feliz 2 años 💖</h1>
+    
 
 <p>Desde que estás en mi vida todo funciona mejor.</p>
 
@@ -56,20 +57,29 @@ function mensaje(){
 
 // Contador de días juntos
 // Cambia la fecha de inicio a la de vuestra relación
-let inicio = new Date("2024-03-10"); // AAAA-MM-DD
+let inicio = new Date("2024-02-16"); // AAAA-MM-DD
 let hoy = new Date();
 
 // Diferencia en milisegundos
 let diferencia = hoy - inicio;
-
+    
 // Convertir a días
 let dias = Math.floor(diferencia / (1000*60*60*24));
 
+// Convertir a años
+let anios =  Math.floor(dias / 365);
+
+    
 // Mostrar en el <p> con id "contador"
 document.getElementById("contador").innerHTML =
 "Llevamos " + dias + " días juntos ❤️";
+
+//Modificar el número de años juntos
+document.getElementById("mensaje-aniversario").innerHTML =
+    "💖 Feliz " + anios + " años 💖";
 
 </script>
 
 </body>
 </html>
+
