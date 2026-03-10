@@ -4,18 +4,23 @@
 <title>Te quiero ❤️</title>
 
 <style>
-body{
+/* General */
+body {
     background:#ffdde1;
-    font-family:Arial;
+    font-family:Arial, sans-serif;
     text-align:center;
-    padding-top:100px;
+    padding-top:50px;
+    margin:0;
 }
 
-h1{
-    font-size:50px;
+/* Título principal */
+h1 {
+    font-size:50px; /* tamaño base para escritorio */
+    margin-bottom:20px;
 }
 
-button{
+/* Botón */
+button {
     padding:15px 30px;
     font-size:20px;
     border:none;
@@ -25,24 +30,49 @@ button{
     cursor:pointer;
 }
 
-button:hover{
+button:hover {
     background:#ff2a54;
 }
 
-#contador{
+/* Contador de días */
+#contador {
     font-size:25px;
     margin-top:30px;
     color:#ff2a54;
 }
 
-#equivalencia_MC{
-    font-size:22px;          /* un poquito más pequeño que el contador */
+/* Equivalencias (sushi u otras) */
+.equivalencia {
+    font-size:22px;
     margin-top:20px;
-    color:#ff6f85;           /* un tono diferente para destacar */
-    font-style:italic;       /* le da un toque divertido/romántico */
-    line-height:1.4;         /* mejor separación de línea si el texto es largo */
+    color:#ff6f85;
+    font-style:italic;
+    line-height:1.4;
 }
-    
+
+/* Imagen responsive */
+img {
+    width:80%;
+    max-width:300px;
+    height:auto;
+    margin-top:20px;
+}
+
+/* Ajustes para pantallas medianas (tablets) */
+@media (max-width:768px) {
+    h1 { font-size:35px; }
+    button { font-size:16px; padding:12px 25px; }
+    #contador { font-size:20px; }
+    .equivalencia { font-size:18px; }
+}
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width:480px) {
+    h1 { font-size:28px; }
+    button { font-size:14px; padding:10px 20px; }
+    #contador { font-size:16px; }
+    .equivalencia { font-size:14px; }
+}
 </style>
 
 </head>
@@ -51,7 +81,7 @@ button:hover{
 
 <h1 id="mensaje-aniversario">💖 Feliz 2 años 💖</h1>
 
-<img src="https://github.com/LaliCuadora/web-aniversario/raw/main/IMG-20260206-WA0111.jpg" width="300">
+<img src="https://github.com/LaliCuadora/web-aniversario/raw/main/IMG-20260206-WA0111.jpg" alt="Foto nuestra">
 
 <p>Desde que estás en mi vida todo funciona mejor.</p>
 
@@ -59,47 +89,40 @@ button:hover{
 
 <p id="contador"></p>
 
-<p id="equivalencia_MC"></p>
+<p class="equivalencia" id="equivalencia_sushi"></p>
 
-    
 <script>
 // Función para mostrar mensaje del botón
-function mensaje(){
+function mensaje() {
     alert("Eres mi persona favorita ❤️");
 }
 
-//CONSTANTES
-const precio = 10;
-    
-// Contador de días juntos
-// Cambia la fecha de inicio a la de vuestra relación
-let inicio = new Date("2024-03-16"); // AAAA-MM-DD
-let hoy = new Date();
+// CONSTANTES
+const precio = 10; // precio aproximado de un menú
+const inicio = new Date("2024-03-16"); // AAAA-MM-DD
+const hoy = new Date();
 
 // Diferencia en milisegundos
-let diferencia = hoy - inicio;
-    
+const diferencia = hoy - inicio;
+
 // Convertir a días
-let dias = Math.floor(diferencia / (1000*60*60*24));
+const dias = Math.floor(diferencia / (1000*60*60*24));
 
 // Convertir a años
-let anios =  Math.floor(dias / 365);
+const anios = Math.floor(dias / 365);
 
+// Equivalencia en piezas de sushi (1 pieza = 1,4 días)
+const equivalencia_sushi = Math.floor(dias / 1.4);
 
-// Calcular el número de
-let equivalencia = Math.floor(dias / 1.4 );
-
-// Mostrar en el <p> con id "contador"
-document.getElementById("equivalencia_MC").innerHTML =
-"Eso equivale a " + equivalencia + " piezas de sushi 🍣";
-    
-// Mostrar en el <p> con id "contador"
+// Mostrar resultados
 document.getElementById("contador").innerHTML =
-"Llevamos " + dias + " días juntos ❤️";
+    "Llevamos " + dias + " días juntos ❤️";
 
-//Modificar el número de años juntos
 document.getElementById("mensaje-aniversario").innerHTML =
     "💖 Feliz " + anios + " años 💖";
+
+document.getElementById("equivalencia_sushi").innerHTML =
+    "Eso equivale a " + equivalencia_sushi + " piezas de sushi 🍣";
 
 </script>
 
