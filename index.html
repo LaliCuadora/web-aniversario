@@ -28,6 +28,12 @@ button{
 button:hover{
     background:#ff2a54;
 }
+
+#contador{
+    font-size:25px;
+    margin-top:30px;
+    color:#ff2a54;
+}
 </style>
 
 </head>
@@ -40,11 +46,28 @@ button:hover{
 
 <button onclick="mensaje()">Haz clic aquí</button>
 
-<script>
+<p id="contador"></p>
 
+<script>
+// Función para mostrar mensaje del botón
 function mensaje(){
     alert("Eres mi persona favorita ❤️");
 }
+
+// Contador de días juntos
+// Cambia la fecha de inicio a la de vuestra relación
+let inicio = new Date("2024-03-10"); // AAAA-MM-DD
+let hoy = new Date();
+
+// Diferencia en milisegundos
+let diferencia = hoy - inicio;
+
+// Convertir a días
+let dias = Math.floor(diferencia / (1000*60*60*24));
+
+// Mostrar en el <p> con id "contador"
+document.getElementById("contador").innerHTML =
+"Llevamos " + dias + " días juntos ❤️";
 
 </script>
 
