@@ -4,25 +4,20 @@
 <title>Te quiero ❤️</title>
 
 <style>
-/* Estilo general */
-body {
+body{
     background:#ffdde1;
-    font-family:Arial, sans-serif;
+    font-family:Arial;
     text-align:center;
-    padding-top:50px;
-    margin:0;
+    padding-top:100px;
 }
 
-/* Título principal */
-h1 {
-    font-size:8vw; /* se adapta al ancho de pantalla */
-    margin-bottom:20px;
+h1{
+    font-size:50px;
 }
 
-/* Botón */
-button {
+button{
     padding:15px 30px;
-    font-size:4vw; /* tamaño relativo para móviles */
+    font-size:20px;
     border:none;
     border-radius:10px;
     background:#ff4b6e;
@@ -30,41 +25,24 @@ button {
     cursor:pointer;
 }
 
-button:hover {
+button:hover{
     background:#ff2a54;
 }
 
-/* Contador de días */
-#contador {
-    font-size:5vw;
+#contador{
+    font-size:25px;
     margin-top:30px;
     color:#ff2a54;
 }
 
-/* Equivalencias (estilo común para sushi o futuros añadidos) */
-.equivalencia {
-    font-size:4vw;
+#equivalencia_MC{
+    font-size:22px;          /* un poquito más pequeño que el contador */
     margin-top:20px;
-    color:#ff6f85;
-    font-style:italic;
-    line-height:1.4;
+    color:#ff6f85;           /* un tono diferente para destacar */
+    font-style:italic;       /* le da un toque divertido/romántico */
+    line-height:1.4;         /* mejor separación de línea si el texto es largo */
 }
-
-/* Imagen responsive */
-img {
-    width:80%;
-    max-width:300px;
-    height:auto;
-    margin-top:20px;
-}
-
-/* Ajustes para móviles muy pequeños */
-@media (max-width:480px) {
-    body { padding-top:30px; }
-    button { font-size:5vw; padding:10px 20px; }
-    h1 { font-size:10vw; }
-    #contador, .equivalencia { font-size:5vw; }
-}
+    
 </style>
 
 </head>
@@ -73,7 +51,7 @@ img {
 
 <h1 id="mensaje-aniversario">💖 Feliz 2 años 💖</h1>
 
-<img src="https://github.com/LaliCuadora/web-aniversario/raw/main/IMG-20260206-WA0111.jpg" alt="Foto nuestra">
+<img src="https://github.com/LaliCuadora/web-aniversario/raw/main/IMG-20260206-WA0111.jpg" width="300">
 
 <p>Desde que estás en mi vida todo funciona mejor.</p>
 
@@ -81,40 +59,47 @@ img {
 
 <p id="contador"></p>
 
-<p class="equivalencia" id="equivalencia_sushi"></p>
+<p id="equivalencia_MC"></p>
 
+    
 <script>
 // Función para mostrar mensaje del botón
-function mensaje() {
+function mensaje(){
     alert("Eres mi persona favorita ❤️");
 }
 
-// CONSTANTES
-const precio = 10; // precio aproximado de un menú
-const inicio = new Date("2024-03-16"); // AAAA-MM-DD
-const hoy = new Date();
+//CONSTANTES
+const precio = 10;
+    
+// Contador de días juntos
+// Cambia la fecha de inicio a la de vuestra relación
+let inicio = new Date("2024-03-16"); // AAAA-MM-DD
+let hoy = new Date();
 
 // Diferencia en milisegundos
-const diferencia = hoy - inicio;
-
+let diferencia = hoy - inicio;
+    
 // Convertir a días
-const dias = Math.floor(diferencia / (1000*60*60*24));
+let dias = Math.floor(diferencia / (1000*60*60*24));
 
 // Convertir a años
-const anios = Math.floor(dias / 365);
+let anios =  Math.floor(dias / 365);
 
-// Equivalencia en piezas de sushi
-const equivalencia_sushi = Math.floor(dias / 1.4);
 
-// Mostrar resultados
+// Calcular el número de
+let equivalencia = Math.floor(dias / 1.4 );
+
+// Mostrar en el <p> con id "contador"
+document.getElementById("equivalencia_MC").innerHTML =
+"Eso equivale a " + equivalencia + " piezas de sushi 🍣";
+    
+// Mostrar en el <p> con id "contador"
 document.getElementById("contador").innerHTML =
-    "Llevamos " + dias + " días juntos ❤️";
+"Llevamos " + dias + " días juntos ❤️";
 
+//Modificar el número de años juntos
 document.getElementById("mensaje-aniversario").innerHTML =
     "💖 Feliz " + anios + " años 💖";
-
-document.getElementById("equivalencia_sushi").innerHTML =
-    "Eso equivale a " + equivalencia_sushi + " piezas de sushi 🍣";
 
 </script>
 
