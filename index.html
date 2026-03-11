@@ -93,8 +93,22 @@ img {
 
 <script>
 // Función para mostrar mensaje del botón
-function mensaje() {
-    alert("Eres mi persona favorita ❤️");
+function mensaje() {     
+    let msg = [
+        "Eres mi persona favorita ❤️",
+        "Contigo todo es mejor 💖",
+        "Si volviera a empezar, te elegiría otra vez",
+        "Gracias por hacer mi vida más bonita",
+        "Cada día contigo es mi favorito",
+        "Eres mi lugar seguro",
+        "Gracias por ser quién eres",
+        "Si la vida fuera código, tú serías mi función favorita",
+        "Eres mi bug favorito porque nunca quiero arreglarlo ❤️",
+        "Eres mi 29 de febrero",
+        "Te quiero más que ayer pero mucho menos que mañana"
+    ];    
+    
+    alert(msg[Math.floor(Math.random() * msg.length)]);
 }
 
 // CONSTANTES
@@ -128,3 +142,4 @@ document.getElementById("equivalencia_sushi").innerHTML =
 
 </body>
 </html>
+
