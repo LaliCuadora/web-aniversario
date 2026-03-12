@@ -92,6 +92,21 @@ img {
     border-radius:20px;
     font-size:22px;
 }
+
+#popup-contenido{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    font-size:22px;
+    transform:scale(0.8);
+    animation:popup 0.3s forwards;
+}
+
+@keyframes popup{
+    to{
+        transform:scale(1);
+    }
+}
     
 </style>
 
@@ -177,3 +192,4 @@ document.getElementById("popup").onclick = function(){
 
 </body>
 </html>
+
