@@ -139,9 +139,7 @@ function mensaje() {
     document.getElementById("popup-texto").textContent = frase;
     document.getElementById("popup").style.display = "flex";
 
-    document.getElementById("popup").onclick = function(){
-    this.style.display = "none";
-}
+ 
 }
 
 // CONSTANTES
@@ -171,10 +169,16 @@ document.getElementById("mensaje-aniversario").innerHTML =
 document.getElementById("equivalencia_sushi").innerHTML =
     "Eso equivale a " + equivalencia_sushi + " piezas de sushi 🍣";
 
+
+document.getElementById("popup").onclick = function(){
+    this.style.display = "none";
+}
+    
 </script>
 
 </body>
 </html>
+
 
 
 
